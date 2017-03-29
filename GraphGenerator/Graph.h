@@ -1,6 +1,8 @@
 #ifndef _GRAPH_H
 #define _GRAPH_H
 
+#include "Node.h"
+
 #include <vector>
 #include <set>
 
@@ -26,7 +28,8 @@ private:
 	int E;											// number of edges
 	int E_actual;									// number of actual edges
 	double density;									// density of the graph [0,1]
-	vector< set<int> >* adj;						// pointer to an array containing adjacency list
+	vector< set<int> > adj;							// pointer to an array containing adjacency list
+	vector<Node*> nodes;							// vector of pointers to node objects
 	void DFSUtil(int node, bool visited[]);			// recursive calls of DFS
 };
 
