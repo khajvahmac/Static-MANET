@@ -5,7 +5,7 @@
 #include <cmath>
 using std::set;
 
-#define DEFAULT_TRANSMISSION_RANGE 30
+#define DEFAULT_TRANSMISSION_RANGE 10
 
 class Node
 {

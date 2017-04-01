@@ -1,0 +1,822 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     44846,        814]
+NotebookOptionsPosition[     44293,        794]
+NotebookOutlinePosition[     44637,        809]
+CellTagsIndexPosition[     44594,        806]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"graph", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<graph.dat\>\""}], 
+       "}"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"n", ",", "e", ",", "r"}], "}"}], " ", "=", " ", 
+   RowBox[{"graph", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coords", " ", "=", " ", 
+   RowBox[{"graph", "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ";;", 
+      RowBox[{"n", "+", "1"}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"edges", " ", "=", " ", 
+    RowBox[{"graph", "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"n", "+", "2"}], ";;"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"First", "@", "#"}], "\[UndirectedEdge]", 
+      RowBox[{"Last", "@", "#"}]}], "&"}], "/@", "edges"}], ",", 
+   RowBox[{"VertexCoordinates", "\[Rule]", "coords"}], ",", " ", 
+   RowBox[{"VertexSize", "\[Rule]", "2"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"First", "@", "#"}], "\[UndirectedEdge]", 
+       RowBox[{"Last", "@", "#"}]}], "&"}], "/@", "edges"}], ",", 
+    RowBox[{"VertexSize", "\[Rule]", "2"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.700071086122851*^9, 3.700071130822236*^9}, {
+   3.7000718846545715`*^9, 3.7000719545351048`*^9}, {3.7000729371795464`*^9, 
+   3.7000729429324465`*^9}, {3.700073038331643*^9, 3.7000730441157236`*^9}, 
+   3.700073633901479*^9, 3.700074360409975*^9, 
+   3.700075324096392*^9},ExpressionUUID->"c0015076-8a49-4591-9019-\
+77a3c0a2cab7"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 135, 152, 2, 18, 48, 95, 138, 183, 3, 34, 38, 42, 56, 59, 116, 
+      4, 52, 127, 137, 187, 5, 66, 74, 159, 176, 178, 6, 51, 143, 7, 29, 107, 
+      199, 8, 30, 57, 60, 102, 157, 158, 9, 62, 72, 93, 96, 140, 146, 156, 
+      165, 179, 185, 189, 10, 53, 98, 108, 119, 188, 11, 32, 33, 46, 86, 125, 
+      139, 162, 194, 12, 19, 26, 31, 77, 81, 89, 103, 122, 134, 144, 167, 13, 
+      85, 99, 105, 173, 14, 44, 75, 97, 184, 15, 174, 180, 16, 37, 101, 17, 
+      49, 58, 64, 145, 171, 175, 78, 113, 148, 27, 20, 45, 83, 100, 182, 21, 
+      87, 123, 153, 22, 23, 65, 67, 80, 120, 106, 115, 124, 128, 24, 147, 154,
+       25, 28, 94, 161, 166, 190, 111, 126, 43, 50, 61, 41, 114, 118, 35, 40, 
+      142, 36, 121, 160, 149, 47, 133, 141, 39, 110, 84, 200, 172, 71, 112, 
+      130, 63, 92, 177, 131, 54, 79, 129, 170, 192, 197, 55, 117, 164, 196, 
+      169, 91, 68, 73, 104, 163, 186, 69, 88, 70, 136, 150, 76, 132, 151, 195,
+       82, 193, 181, 198, 90, 109, 155, 191, 168}, {Null, CompressedData["
+1:eJwVxfdDEgsAAOCGiKg4UxxZmgzluAOOw8USkD0lR5pW4oJzoKkoMlLTcCSK
+5jkLxTLS1HJlL7c9e3/We++X78sy20zmO7du3RL/x//fvnP7bhguLDwMHxYR
+RoiMioyOJEbGRMZGxsUnxCfG34tPSiYlpySnJqclp9/PuP/gYebDrIePssnZ
+lGxqNi07JzuXDtAZdJAO0Zl0Fp1Nh+kcOkLn0h/l5ecV5BXmFeXx+AK+kC/i
+F/PFfAlfyi+RyWUKmVKmkqllGplWppPpZQaZsdRU+ri0rLS8orLiSUVVRfXT
+3Kc1T2ufPX9W/OxFnbmuvq6hrrGuqa4ZB+AsODzOiovAoTgYR8AhcoW8Ra6U
+q+UauVauk+vlxtbM1rbW9lZba0fny86uzu5OXo+9p7enr8fR09/DsffZLXaH
+3Wl32d12z6vCVwOvBodeDw0PjQy9UbQolAqVQqfQK4wKbwupZbRF1zL2+s7r
+kUxBZlammDxOniBTyFTyWzKNnEPOVaqVGqVWqVMaBG0CkcAmEAskAqlwUugT
+TgklQqmwJIoYFRMVGxU37Z8mTs/Mvph9Nzv3/MVzLHo+OjY6LnohenGpaml5
+qWup20/0j/tX/DP+Gn/tZP6kb3KKGEtcIc6MU8ZzxnMrqyqrK9+3idra22xt
+EpFNJBZJRNL5uPmF+cVwT3hE+AdzvbnB3GRunqBOBCZoE6sTaxnBjPWMBxkf
+ExoSEhOaEpLyfflF+Z82Pm+ENr5sbG5sfQW/Zn1lxcTGxMV8oFApNEoOJbe+
+ob6xvqm+OTaOGqDSqGtvV9/OAAzAAoAAHoAAK8AEWAAKYAAbgAECgADc4Hpw
+O/gguBP8GNxtSGxo6nX09vc29jb3ckijJB0plfSNlN7n6Pve59zb3zPtHeyF
+9g73jn4c/1j/OfbzrwAtsBpYCxwGjhgWhoMBMiAGk8FisBkwg8NAGNx9035o
+/3D/KCU1JS0l/UnVk18nyyenJ2cn5yqXyq3yqPQqo8prcVicFo6F8PnL500H
+R61Ra9U6tV5tuMBfWC/QC+wCvrhst7V3rNSs1K5crVybDkxlppCp3LRVLC6W
+Fpe87HrZffz7ePt4R6PV6DR6jeH39u+d7871HRACmSALREEMZIMwiIDc4e3h
+keFdvBUfgUfxGB7GI5AVYkIsCIUwiA3BEAJxq6oLigq6C3iPyx6X2zpoa7Qc
+rU6r1xoOQgflB0dlobLysi2ny+l2erIeFRYVDhQOFvL+/rV8uny2fD46Nvpt
+9a6VaUWtmBW2Ilaub8r3ySf1lbjcLo/L6CK4vNs727tTkilpEa+/sb/53c27
+OZ2hq9vtcRvdXrFELB37ltiUmOQheLyhw1B56Ci0Gdr6VHJ6dvrn9HxhceFm
+4VJv0Bv13giCRMpkMVEmxmQzYSbC5C7eLF42NjdyWCgLY7FZMAthcQcGB+YG
+eCiGslEYRVAuxsZgDMG4Z3/Ozgd5N3M3b24u2TCbw0bY3Jzc1LTU9JE30pLD
+o51dGIG5Ru8/H79s1tTWXNVcp6XXXtVeX113JFW/R7h/zje3/gVoQ51y
+       "]}, {VertexSize -> {2}, VertexCoordinates -> CompressedData["
+1:eJwVxf9WmlAAAGBCETRRD9oEbAX+6DrUCRpXd3CUoKGCqAQzoYuID7DX3GNt
+++M7n5j+9lIcw7A///zf5KE5nxAIpU2GsVGn7ZTbBX2FEEZnEOSnXKystkdy
+W+cG0XPwKIweHd/3NLGyPnZ26NYkJ6a6GQhDUZuOaWanYPJK8XtULvNGzaGs
+v7HJsfGtWIgoyc3eL8xZCPjkFX48uGLf+l6uRe3wFI7CEz3FYytggeOVLpcq
+iTPmL3lvEX3fSQYasd1NQ4rR6l9mt/ZZL/+IR1R7NeKVObDoPC1cM7mNAE+C
+G38WQ3xy5Nb1ztc8WYs8974/z49nB12FDD4ptcC11dtHd7Wf7/RruC9dZruA
+jLnKEGNlZRkazcsSv0KDfHmyhspGAlU7bX62LO5JMrpGI4vza7bKci2pB+yo
+i/pJLPTGIqV5ZViUFnJn6YObs2flmPPCQJlAfUjStJsPU+D7MHihDqqdIyTr
+vVL4uGuC9eKACw4hqbSK8c/MIevrDfeG+gu8dVGf
+        "]}]]}, 
+    TagBox[GraphicsGroupBox[{GraphicsComplexBox[CompressedData["
+1:eJx1lrtuFEEQRUdEhAQEBA4MQghZCKE175dnF/M0YDzY642RiPmF/rQJ+Rw+
+wQafc6Uu5JWscj+m63bVrVt988ev6eeVYRh+n//9tf9+87fx4p/n2IOxmx+x
+jfnhOvOnvW0b1pfYRW/nqexfsa79jr1f5m9jD7HlHG1+O4yvlnXxe8/P2Gfg
+EdeH4gdc8wnzW/388KSc8479a+Y/sd/v97Aj9mOZ99yT3rZj7Bes3z/g/KnH
+aXxnzksc7jBv3rlPK3lv4G5Tfy9xt/c9DnEZ1+a9zIc8AE/i7K/EPeve5y3j
+bewNLHluR/26vE3ePe+w7H+Khb/J8wv27TO+i4WPya94wNfM3zXsSyz+Evev
+7Oec9oZ5+Wk91Xvo93XvL3yQf96PPKWuHhb8qx7HuO7H8rOuJ6/W0cC+095/
+eE+cc09xw+vhHvs3vR12sVu9n/BJvurHPB/3ONQt45P6Ml/4k+fhs3qnDrhf
+nlceLMr36sNjLHlPHVq31qc6R76afly3rvS3wk5lHR5ZR9Fx4p+4mMdbZQyf
+ZvNAnVl36kJ0DH6GH+qCeRa/lnpK/OSPOmR+0FX1zXimf7wq+OVJ4Xn00/xZ
+l+Q7esE50S/yNcpT9QN9TF3a78o95HWjLyb+mzKvvslb4/Kov08Dzywe82V+
+/e6SuvI+6QulryVPxN3+ot7np27Cr/DsqMfRjOuyx+E+4xWeHZTvxGVdFP6m
+D4lDnqjH6g06Yr39916x/y/78xMHz/Fc8e2XMX0j+q9eUY/hsfHbLWPfEeLS
+X7lPdMN8gyN9Xp2TZ85bl56nvlvH6EreGfLI/iGv7Yfy1niZhxV4nLePG8c/
+exf4jXvVa/u7Oi9+8+771Hnfe/qxPumTiUOxxi11vy77xFveY9E7/clP3x/q
+DTjMV+5lPyJ+3jt1Td3l/Vv1oOhJeGXf9Rz5Z37Vv+I/8dopY3++S5xfFD/y
+3fgYD99R+iXv53E6A8ayKec=
+        "], {{
+          {Hue[0.6, 0.7, 0.5], Opacity[0.7], {
+            {Arrowheads[0.], ArrowBox[{1, 2}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{1, 3}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{2, 131}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{3, 160}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{4, 5}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{4, 6}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{4, 7}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{4, 8}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{4, 9}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 7}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 8}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 9}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 43}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 104}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{5, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{6, 8}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{6, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{6, 158}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 8}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 43}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{7, 192}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{8, 9}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{9, 43}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{9, 104}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{9, 124}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{9, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 11}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 12}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 13}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 14}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 15}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{10, 16}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{11, 13}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{11, 14}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{11, 15}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{11, 16}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{12, 15}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{12, 16}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{12, 151}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{12, 152}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{12, 153}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{13, 15}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{13, 144}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{13, 145}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{13, 146}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{13, 156}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{14, 15}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{14, 16}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{14, 158}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{15, 16}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{16, 151}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{17, 18}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{17, 19}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{17, 20}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{17, 21}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{18, 19}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{18, 21}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{18, 100}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{18, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{19, 21}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{19, 100}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{19, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{21, 112}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{22, 23}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{22, 24}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{22, 25}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{22, 26}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{22, 27}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 25}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 27}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 107}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 136}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{23, 176}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{24, 25}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{24, 26}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{24, 27}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{25, 26}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{25, 27}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{26, 27}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{28, 29}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{28, 30}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{29, 30}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{29, 162}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{29, 163}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{29, 164}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{30, 162}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{31, 32}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{31, 33}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{31, 34}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{32, 33}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{32, 61}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{32, 65}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{32, 108}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{33, 34}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{33, 172}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{34, 42}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 36}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 37}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 38}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 39}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 40}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{35, 41}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 37}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 38}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 39}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 40}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 41}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 138}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 139}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{36, 140}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{37, 38}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{37, 39}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{37, 40}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{37, 41}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{37, 138}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{38, 39}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{38, 139}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{38, 159}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{38, 161}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{39, 40}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{39, 139}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{39, 159}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{39, 161}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{40, 41}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{40, 138}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{41, 91}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{41, 138}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 43}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 44}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 45}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 46}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 47}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 51}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{42, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 44}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 45}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 46}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 47}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 104}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{43, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 45}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 46}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 47}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 51}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 104}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{44, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 46}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 47}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{45, 172}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 47}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{46, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 48}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{47, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 49}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{48, 172}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 50}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 51}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{49, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 52}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{50, 192}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{51, 101}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{51, 104}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{51, 117}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{51, 119}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{51, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{52, 53}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{52, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{52, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{52, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{53, 105}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{53, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{53, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{54, 55}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{54, 56}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{54, 57}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{54, 58}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{54, 59}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{55, 58}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{55, 141}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{55, 142}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{55, 165}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{56, 58}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{56, 59}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{56, 116}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{57, 58}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{57, 59}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{57, 127}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{57, 128}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{57, 129}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{58, 59}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{59, 113}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{59, 128}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{59, 129}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 61}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 62}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 63}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 64}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 65}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 66}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{60, 68}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 63}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 65}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 66}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 109}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{61, 111}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 66}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 68}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 141}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 142}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{62, 143}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{63, 65}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{63, 66}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{63, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{63, 109}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{63, 111}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{64, 65}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{64, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{64, 68}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{64, 94}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{65, 66}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{65, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{66, 67}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{66, 109}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{66, 143}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{67, 68}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{67, 142}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{67, 143}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{68, 142}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{68, 165}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 70}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 71}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 72}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 73}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 74}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 75}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 76}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{69, 80}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 71}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 72}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 74}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 75}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 76}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 80}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{70, 107}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 72}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 73}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 80}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 107}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{71, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{72, 74}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{72, 75}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{72, 76}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{72, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{72, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 80}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 124}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 125}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{73, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{74, 75}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{74, 76}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{74, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{74, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{74, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{75, 76}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{75, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{75, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{75, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{76, 77}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{76, 78}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{76, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{77, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{77, 107}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{78, 79}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{78, 80}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{78, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{80, 124}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{80, 125}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{80, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{81, 82}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{81, 83}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{81, 84}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{81, 85}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 84}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 85}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 168}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 171}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 178}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 179}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{82, 180}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{83, 84}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{83, 85}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{84, 85}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{84, 168}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{84, 171}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{85, 168}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{85, 180}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{86, 87}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{86, 88}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{86, 89}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{86, 90}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{87, 89}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{87, 90}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{87, 157}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{88, 89}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{88, 187}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{89, 90}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{89, 154}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{90, 157}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{91, 92}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{91, 93}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{92, 93}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{92, 145}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{92, 156}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{92, 194}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{92, 195}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{93, 145}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{93, 156}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{93, 194}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{93, 195}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{94, 95}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{94, 96}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{95, 96}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{95, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{96, 147}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 98}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 99}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 100}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 101}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{97, 103}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{98, 99}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{98, 100}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{98, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{98, 103}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{99, 100}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{99, 101}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{99, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{99, 103}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{100, 102}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{101, 103}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{101, 119}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{101, 122}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{103, 119}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{103, 122}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{104, 118}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{104, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{104, 123}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{105, 106}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{105, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{105, 192}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{106, 150}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{106, 192}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{107, 136}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{107, 137}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{108, 109}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{108, 110}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{108, 111}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{108, 112}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{109, 110}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{109, 111}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{110, 111}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{110, 112}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{111, 112}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{113, 114}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{113, 115}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{113, 116}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{114, 115}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{114, 116}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{115, 116}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{115, 154}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{116, 154}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{117, 118}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{117, 119}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{117, 120}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{117, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{117, 122}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 120}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 123}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 124}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 125}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{118, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{119, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{119, 122}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{120, 121}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{120, 123}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{120, 177}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{123, 124}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{123, 125}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{123, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{123, 177}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{124, 125}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{124, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{124, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{125, 126}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{125, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{126, 135}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{127, 128}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{127, 129}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{128, 129}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{128, 149}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{130, 131}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{130, 132}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{130, 133}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{130, 134}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{131, 133}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{132, 133}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{132, 173}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{132, 175}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{133, 134}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{134, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{136, 137}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{136, 176}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{137, 176}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{137, 185}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{138, 145}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{139, 159}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{139, 160}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{139, 161}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{140, 146}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{140, 160}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{141, 142}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{141, 143}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{142, 143}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{142, 165}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{144, 145}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{144, 146}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{145, 146}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{145, 156}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{147, 148}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{147, 149}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{148, 149}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{148, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{149, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{150, 192}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{151, 152}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{151, 153}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{152, 153}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{152, 193}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{152, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{153, 193}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{153, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{154, 155}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{155, 188}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{155, 189}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{155, 190}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{155, 191}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{156, 194}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{156, 195}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{159, 160}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{159, 161}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{159, 181}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{159, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{162, 163}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{162, 164}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{162, 173}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{162, 174}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{162, 175}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{163, 174}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{163, 183}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{164, 200}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{166, 167}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{166, 168}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{166, 169}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{166, 170}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{166, 171}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{167, 169}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{167, 170}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 170}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 171}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 178}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 179}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 180}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 181}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{168, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{169, 170}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{170, 171}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{173, 174}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{173, 175}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{173, 184}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{173, 196}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{174, 175}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{174, 184}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{174, 196}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{178, 179}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{178, 180}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{178, 181}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{178, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{179, 181}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{179, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{180, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{181, 182}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{183, 184}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{184, 196}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{185, 186}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{187, 197}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{188, 189}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{188, 190}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{188, 191}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{189, 190}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{189, 191}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{189, 199}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{190, 191}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{190, 199}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{191, 199}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{192, 193}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{193, 198}, 1.]}}, {
+            {Arrowheads[0.], ArrowBox[{194, 195}, 1.]}}}}, {
+          {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+           DiskBox[1], DiskBox[2], DiskBox[3], DiskBox[4], DiskBox[5], 
+           DiskBox[6], DiskBox[7], DiskBox[8], DiskBox[9], DiskBox[10], 
+           DiskBox[11], DiskBox[12], DiskBox[13], DiskBox[14], DiskBox[15], 
+           DiskBox[16], DiskBox[17], DiskBox[18], DiskBox[19], DiskBox[20], 
+           DiskBox[21], DiskBox[22], DiskBox[23], DiskBox[24], DiskBox[25], 
+           DiskBox[26], DiskBox[27], DiskBox[28], DiskBox[29], DiskBox[30], 
+           DiskBox[31], DiskBox[32], DiskBox[33], DiskBox[34], DiskBox[35], 
+           DiskBox[36], DiskBox[37], DiskBox[38], DiskBox[39], DiskBox[40], 
+           DiskBox[41], DiskBox[42], DiskBox[43], DiskBox[44], DiskBox[45], 
+           DiskBox[46], DiskBox[47], DiskBox[48], DiskBox[49], DiskBox[50], 
+           DiskBox[51], DiskBox[52], DiskBox[53], DiskBox[54], DiskBox[55], 
+           DiskBox[56], DiskBox[57], DiskBox[58], DiskBox[59], DiskBox[60], 
+           DiskBox[61], DiskBox[62], DiskBox[63], DiskBox[64], DiskBox[65], 
+           DiskBox[66], DiskBox[67], DiskBox[68], DiskBox[69], DiskBox[70], 
+           DiskBox[71], DiskBox[72], DiskBox[73], DiskBox[74], DiskBox[75], 
+           DiskBox[76], DiskBox[77], DiskBox[78], DiskBox[79], DiskBox[80], 
+           DiskBox[81], DiskBox[82], DiskBox[83], DiskBox[84], DiskBox[85], 
+           DiskBox[86], DiskBox[87], DiskBox[88], DiskBox[89], DiskBox[90], 
+           DiskBox[91], DiskBox[92], DiskBox[93], DiskBox[94], DiskBox[95], 
+           DiskBox[96], DiskBox[97], DiskBox[98], DiskBox[99], DiskBox[100], 
+           DiskBox[101], DiskBox[102], DiskBox[103], DiskBox[104], 
+           DiskBox[105], DiskBox[106], DiskBox[107], DiskBox[108], 
+           DiskBox[109], DiskBox[110], DiskBox[111], DiskBox[112], 
+           DiskBox[113], DiskBox[114], DiskBox[115], DiskBox[116], 
+           DiskBox[117], DiskBox[118], DiskBox[119], DiskBox[120], 
+           DiskBox[121], DiskBox[122], DiskBox[123], DiskBox[124], 
+           DiskBox[125], DiskBox[126], DiskBox[127], DiskBox[128], 
+           DiskBox[129], DiskBox[130], DiskBox[131], DiskBox[132], 
+           DiskBox[133], DiskBox[134], DiskBox[135], DiskBox[136], 
+           DiskBox[137], DiskBox[138], DiskBox[139], DiskBox[140], 
+           DiskBox[141], DiskBox[142], DiskBox[143], DiskBox[144], 
+           DiskBox[145], DiskBox[146], DiskBox[147], DiskBox[148], 
+           DiskBox[149], DiskBox[150], DiskBox[151], DiskBox[152], 
+           DiskBox[153], DiskBox[154], DiskBox[155], DiskBox[156], 
+           DiskBox[157], DiskBox[158], DiskBox[159], DiskBox[160], 
+           DiskBox[161], DiskBox[162], DiskBox[163], DiskBox[164], 
+           DiskBox[165], DiskBox[166], DiskBox[167], DiskBox[168], 
+           DiskBox[169], DiskBox[170], DiskBox[171], DiskBox[172], 
+           DiskBox[173], DiskBox[174], DiskBox[175], DiskBox[176], 
+           DiskBox[177], DiskBox[178], DiskBox[179], DiskBox[180], 
+           DiskBox[181], DiskBox[182], DiskBox[183], DiskBox[184], 
+           DiskBox[185], DiskBox[186], DiskBox[187], DiskBox[188], 
+           DiskBox[189], DiskBox[190], DiskBox[191], DiskBox[192], 
+           DiskBox[193], DiskBox[194], DiskBox[195], DiskBox[196], 
+           DiskBox[197], DiskBox[198], DiskBox[199], DiskBox[200]}}}]}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->{551., Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7000737179778028`*^9, {3.7000740978379927`*^9, 3.700074119481476*^9}, {
+   3.7000743610211*^9, 3.7000743685009823`*^9}, 
+   3.700075324501436*^9},ExpressionUUID->"39977266-116e-483d-8c11-\
+7dfd7bd7f01c"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7000753212873926`*^9, 
+  3.700075321337527*^9}},ExpressionUUID->"770d4b54-8c72-4373-9063-\
+563ff783faa5"]
+},
+WindowSize->{759, 833},
+WindowMargins->{{Automatic, 572}, {64, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1927, 54, 164, "Input", "ExpressionUUID" -> \
+"c0015076-8a49-4591-9019-77a3c0a2cab7"],
+Cell[2510, 78, 41610, 708, 565, "Output", "ExpressionUUID" -> \
+"39977266-116e-483d-8c11-7dfd7bd7f01c"]
+}, Open  ]],
+Cell[44135, 789, 154, 3, 30, InheritFromParent, "ExpressionUUID" -> \
+"770d4b54-8c72-4373-9063-563ff783faa5"]
+}
+]
+*)
+

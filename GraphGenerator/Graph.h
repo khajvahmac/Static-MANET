@@ -12,9 +12,8 @@ class Graph
 {
 public:
 	Graph();											// default constructor
-	Graph(int numberOfNodes);							// constructor 2
-	Graph(int numberOfNodes, double density, 
-			int areaWidth = 300, int areaHeight = 300);	// constructor 3
+	Graph(int numberOfNodes,
+		int width = 300, int height = 300);				// constructor
 
 	~Graph();											// default destructor
 
@@ -31,18 +30,20 @@ public:
 	void generate_random_graph();						// generates a random graph
 	void generate_connected_random_graph();				// generates a random graph
 
+	void export_graph();								// exports the graph
+
 private:
 	int gWidth;											// width of the graph zone
 	int gHeight;										// height of the graph zone
 	int N;												// number of nodes
 	int E;												// number of edges
-	int E_actual;										// number of actual edges
 	double density;										// density of the graph [0,1]
 	bool isConnected;									// check if graph is connected
 	vector< set<int> > adj;								// pointer to an array containing adjacency list
 	vector<Node*> nodes;								// vector of pointers to node objects
 
-	void rebuild_adjacency_list();
+	void calculate_density();							// calculate density of graph from number of edges
+	void rebuild_adjacency_list();						// rebuild the adjacency list
 };
 
 #endif // !_GRAPH_H
