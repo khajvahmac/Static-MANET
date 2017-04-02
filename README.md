@@ -8,9 +8,10 @@ Project implements Mobile Ad-Hoc Network creation, data transmission and perform
 ##### What is done:
 - Structures for Node, Graph objects.
 - DFS traversal of the Graph.
-- Random Graph generation.
+- Random graph generation.
+- Export of graph objects
 - Various utility functions.
 
 ##### What is in progress:
 - Finalization of structures and implementation of all neccesary funcitons.
-- Exporting Graph and Node objects in to file (plain txt of json).
+- New methods for graph generations
