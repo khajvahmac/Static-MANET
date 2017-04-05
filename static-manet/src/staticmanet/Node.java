@@ -1,7 +1,3 @@
-/**
- * Created by kv on 4/5/17.
- */
-
 package staticmanet;
 
 public class Node {

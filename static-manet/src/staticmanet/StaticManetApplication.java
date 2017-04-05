@@ -1,8 +1,5 @@
 package staticmanet;
 
-/**
- * Created by kv on 4/5/17.
- */
 public class StaticManetApplication implements Application{
 
     private NetworkInterface networkInterface;

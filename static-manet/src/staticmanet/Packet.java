@@ -1,8 +1,5 @@
 package staticmanet;
 
-/**
- * Created by kv on 4/5/17.
- */
 public class Packet {
     private int source;
     private int destination;
