@@ -4,12 +4,14 @@ public class Packet {
     private int source;
     private int destination;
     private int interSource;
+    private MessageType messageType;
 
-    public Packet(int source, int destination, int interSource, Object data) {
+    public Packet(int source, int destination, int interSource, Object data, MessageType type) {
         this.source = source;
         this.destination = destination;
         this.interSource = interSource;
         this.data = data;
+        this.messageType = messageType;
     }
 
     public Object getData() {
