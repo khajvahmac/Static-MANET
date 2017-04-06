@@ -1,15 +1,25 @@
 package staticmanet;
 
 public class Coordinate {
-    private float x;
-    private float y;
+    private double x;
+    private double y;
 
-    public Coordinate(float x, float y) {
+    public Coordinate(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public float getX() {
+    /**
+     * @param coordinate Coordinate to calculate distance to.
+     * */
+    public double distanceTo(Coordinate coordinate) {
+        double diffX = coordinate.getX() - this.getY();
+        double diffY = coordinate.getY() - this.getY();
+
+        return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+    }
+
+    public double getX() {
         return x;
     }
 
@@ -17,7 +27,7 @@ public class Coordinate {
         this.x = x;
     }
 
-    public float getY() {
+    public double getY() {
         return y;
     }
 

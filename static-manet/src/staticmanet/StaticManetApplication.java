@@ -8,6 +8,10 @@ public class StaticManetApplication implements Application{
 
     }
 
+    public void nodeMoving(Coordinate newCoordinates) {
+
+    }
+
     public void setNetworkInterface(NetworkInterface networkInterface) {
         this.networkInterface = networkInterface;
     }
