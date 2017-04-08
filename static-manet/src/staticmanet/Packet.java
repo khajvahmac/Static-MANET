@@ -5,12 +5,21 @@ public class Packet {
     private int destination;
     private int interSource;
     private MessageType messageType;
+    private Object data;
 
     public Packet(int source, int destination, int interSource, Object data, MessageType type) {
         this.source = source;
         this.destination = destination;
         this.interSource = interSource;
         this.data = data;
+        this.messageType = messageType;
+    }
+
+    public MessageType getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(MessageType messageType) {
         this.messageType = messageType;
     }
 
@@ -46,5 +55,14 @@ public class Packet {
         this.source = source;
     }
 
-    private Object data;
+    @Override
+    public String toString() {
+        return "Packet{" +
+                "source=" + source +
+                ", destination=" + destination +
+                ", interSource=" + interSource +
+                ", messageType=" + messageType +
+                ", data=" + data +
+                '}';
+    }
 }
