@@ -5,6 +5,7 @@ public class Packet {
     private int destination;
     private int interSource;
     private MessageType messageType;
+    private int nextDestination;
     private Object data;
 
     public Packet(int source, int destination, int interSource, Object data, MessageType type) {
@@ -21,6 +22,14 @@ public class Packet {
 
     public void setMessageType(MessageType messageType) {
         this.messageType = messageType;
+    }
+
+    public int getNextDestination() {
+        return nextDestination;
+    }
+
+    public void setNextDestination(int nextDestination) {
+        this.nextDestination = nextDestination;
     }
 
     public Object getData() {

@@ -6,5 +6,6 @@ package staticmanet;
 public enum MessageType {
     NODE_LEAVING,
     NODE_ENTERING,
-    DATA_TO_TRANSMIT
+    DATA_TO_TRANSMIT,
+    HEX_NOT_EMPTY
 }

@@ -2,6 +2,7 @@ package staticmanet;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * Main network class.
@@ -9,6 +10,7 @@ import java.util.List;
 public class Network {
 
     private List<Node> nodes = new ArrayList<>();
+    private static ExecutorService executorService = new ThreadPoolExecutor(10, 100, 100, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>());
 
     /**
      * Add a new node to the network.
@@ -20,9 +22,12 @@ public class Network {
     /**
      * Transmit data to the nodes in range.
      * */
-    public void transmit(Node source, Packet packet, double range) {
+    public void transmit(Node source, Packet packet, double range) throws InterruptedException {
         nodes.stream().filter(x ->
             source.getCoordinate().distanceTo(x.getCoordinate()) <= range
-        ).forEach(x -> x.receivePacket(packet));
+        ).forEach(x -> {
+            Thread.sleep(100);
+            executorService.execute(() -> x.receivePacket(packet));
+        });
     }
 }
