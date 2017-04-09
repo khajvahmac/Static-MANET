@@ -230,3 +230,28 @@ void Graph::export_graph()
 
 	file.close();
 }
+
+void Graph::set_hex_zone()
+{
+	zRowCount = (int)(1.0*gWidth / (sqrt(3)*hexSide)) + 5;
+	zColCount = (int)((2.*gHeight) / (3 * hexSide)) + 5;
+}
+
+int Graph::get_hex_zone(double x, double y)
+{
+	int row, col;
+	if (y <= hexSide) {
+		row = 0;
+	}
+	else {
+		y -= hexSide;
+		row = (int)(y / (3.*hexSide / 2)) + 1;
+	}
+
+	if (row % 2) {
+		x -= hexSide*sqrt(3) / 2;
+	}
+	col = (int)(x / (hexSide*sqrt(3)));
+
+	return row*zColCount + col;
+}

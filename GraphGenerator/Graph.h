@@ -32,6 +32,9 @@ public:
 
 	void export_graph();								// exports the graph
 
+	void set_hex_zone();								// calculates number of zones in 1 row and 1 column
+	int get_hex_zone(double x, double y);				// gets zone number by coordinates
+
 private:
 	int gWidth;											// width of the graph zone
 	int gHeight;										// height of the graph zone
@@ -39,6 +42,8 @@ private:
 	int E;												// number of edges
 	double density;										// density of the graph [0,1]
 	bool isConnected;									// check if graph is connected
+	double hexSide;										// size of a side of a hexagon
+	int zRowCount, zColCount;							// number of zones rows and columns
 	vector< set<int> > adj;								// pointer to an array containing adjacency list
 	vector<Node*> nodes;								// vector of pointers to node objects
 
