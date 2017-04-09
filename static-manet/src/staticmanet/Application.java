@@ -5,5 +5,7 @@ package staticmanet;
  */
 public interface Application {
     void receivePacket(Packet packet);
+    void beforeNodeMoved(Coordinate newCoordinates);
+    void afterNodeMoved(Coordinate newCoordinates);
     void setNetworkInterface(NetworkInterface networkInterface);
 }
