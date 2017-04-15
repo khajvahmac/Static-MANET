@@ -7,5 +7,7 @@ public enum MessageType {
     NODE_LEAVING,
     NODE_ENTERING,
     DATA_TO_TRANSMIT,
-    HEX_NOT_EMPTY
+    HEX_NOT_EMPTY,
+    HEX_EMPTY,
+    HEX_BECAME_ACTIVE
 }

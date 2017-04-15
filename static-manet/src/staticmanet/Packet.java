@@ -7,6 +7,8 @@ public class Packet {
     private MessageType messageType;
     private int nextDestination;
     private Object data;
+    private static int globalId = 0;
+    private int id;
 
     public Packet(int source, int destination, int interSource, Object data, MessageType type) {
         this.source = source;
@@ -14,6 +16,15 @@ public class Packet {
         this.interSource = interSource;
         this.data = data;
         this.messageType = messageType;
+        this.id = globalId++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public MessageType getMessageType() {

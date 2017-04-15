@@ -22,11 +22,10 @@ public class Network {
     /**
      * Transmit data to the nodes in range.
      * */
-    public void transmit(Node source, Packet packet, double range) throws InterruptedException {
+    public void transmit(Node source, Packet packet, double range) {
         nodes.stream().filter(x ->
             source.getCoordinate().distanceTo(x.getCoordinate()) <= range
         ).forEach(x -> {
-            Thread.sleep(100);
             executorService.execute(() -> x.receivePacket(packet));
         });
     }
