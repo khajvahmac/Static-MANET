@@ -9,5 +9,6 @@ public enum MessageType {
     DATA_TO_TRANSMIT,
     HEX_NOT_EMPTY,
     HEX_EMPTY,
-    HEX_BECAME_ACTIVE
+    HEX_BECAME_ACTIVE,
+    NEW_NEIGHBOURS
 }

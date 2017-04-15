@@ -18,6 +18,7 @@ public class StaticManetApplication implements Application{
     private NetworkInterface networkInterface;
     private static Logger logger = Logger.getLogger("StaticManet");
     private Coordinate coordinate;
+    private List<Integer> neighbourList;
     private Map<Integer, Boolean> neighbours;
     private Set<Integer> processedPackets = new HashSet<>();
     private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
@@ -31,6 +32,23 @@ public class StaticManetApplication implements Application{
     }
 
     public void receivePacket(Packet packet) {
+
+        switch (packet.getMessageType()) {
+            case HEX_BECAME_ACTIVE:
+                logger.info("Hex #" + packet.getInterSource() + " became active.");
+                this.neighbours.put(packet.getInterSource(), true);
+                Packet packet1 = new Packet(this.currHexagon, packet.getInterSource(), this.currHexagon, this.neighbours,
+                        MessageType.NEW_NEIGHBOURS);
+                this.networkInterface.longTransmitPacket(packet1);
+                break;
+            case HEX_EMPTY:
+                logger.info("Neighbour empty" + packet);
+                this.neighbours.put(packet.getInterSource(), false);
+                break;
+            case NEW_NEIGHBOURS:
+                break;
+        }
+
         //Discard if the packet isn't for the current hexagon.
         if (packet.getNextDestination() != this.currHexagon) {
             return;
@@ -58,13 +76,7 @@ public class StaticManetApplication implements Application{
                 logger.info("Hex not empty" + packet);
                 this.isEmpty = false;
                 break;
-            case HEX_EMPTY:
-                logger.info("Neighbour empty" + packet);
-                this.neighbours.put(packet.getInterSource(), false);
-                break;
-            case HEX_BECAME_ACTIVE:
-                logger.info("Hex became active" + packet);
-                this.neighbours.put(packet.getInterSource(), true);
+
         }
     }
 
@@ -92,6 +104,7 @@ public class StaticManetApplication implements Application{
 
     public void afterNodeMoved(Coordinate newCoordinates) {
         if (this.currHexagon != this.areaManager.getHexagonId(newCoordinates)) {
+            this.neighbourList = this.areaManager.getNeighbourIds(this.coordinate);
             Packet enteringPacket = new Packet(this.currHexagon, this.currHexagon, this.currHexagon,
                     null, MessageType.NODE_ENTERING);
 
@@ -125,7 +138,7 @@ public class StaticManetApplication implements Application{
     }
 
     private void dataToTransmit(Packet packet) {
-        List<Integer> nonEmptyNeighbours = this.neighbours.keySet().stream()
+        List<Integer> nonEmptyNeighbours = this.neighbourList.stream()
                 .filter(x -> this.neighbours.get(x) && x != packet.getInterSource())
                 .collect(Collectors.toList());
 

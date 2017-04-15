@@ -1,6 +1,9 @@
 package staticmanet;
 
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Node {
     private int id;
@@ -8,6 +11,7 @@ public class Node {
     private Application application;
     private NetworkInterface networkInterface;
     private ExecutorService es;
+    private static ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
 
     /**
      * @param id The id of the node
@@ -22,6 +26,13 @@ public class Node {
         this.application = application;
         this.networkInterface = new NetworkInterface(this, network);
         this.application.setNetworkInterface(this.networkInterface);
+    }
+
+    /*
+    * Starts moving the node randomly.
+    * */
+    public void startRandomMove() {
+        scheduledExecutorService.scheduleAtFixedRate(() -> randomMove(), 1, 1, TimeUnit.SECONDS);
     }
 
     public Coordinate getCoordinate() {
@@ -41,16 +52,15 @@ public class Node {
     }
 
     /*
-    * Starts moving the node randomly.
-    * */
-    public void startRandomMove() {
-        this.es.submit(this::randomMove);
-    }
-
-    /*
     * Randomly moves the node.
     * */
     private void randomMove() {
-
+        double radius = 0 + Math.random() * ((ApplicationConstants.MAX_MOVE_DISTANCE - 0) + 1);
+        int angle = (int)(Math.random() * (360 + 1));
+        Coordinate newCoordinates = new Coordinate(Math.sin(angle)*radius + this.coordinate.getX(),
+                Math.cos(angle)*radius + this.coordinate.getY());
+        this.application.beforeNodeMoved(newCoordinates);
+        this.coordinate = newCoordinates;
+        this.application.afterNodeMoved(newCoordinates);
     }
 }
