@@ -46,3 +46,8 @@ double dist(Node* const a, Node* const b)
 {
 	return sqrt(pow(a->getX() - b->getX(), 2) + pow(a->getY() - b->getY(), 2));
 }
+
+double dist(const std::pair<int, int> a, const std::pair<int, int> b)
+{
+	return sqrt(pow(a.first - b.first, 2) + pow(a.second - b.second, 2));
+}

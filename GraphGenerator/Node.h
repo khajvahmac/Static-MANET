@@ -33,5 +33,6 @@ private:
 };
 
 double dist(Node* const a, Node* const b);
+double dist(const std::pair<int, int> a, const std::pair<int, int> b);
 
 #endif // !_NODE_H

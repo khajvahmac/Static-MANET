@@ -28,7 +28,8 @@ public:
 
 	void DFS(int node, bool* const visited);			// DFS traversal of the complete graph
 	void generate_random_graph();						// generates a random graph
-	void generate_connected_random_graph();				// generates a random graph
+	void generate_connected_random_graph();				// generates a connected random graph
+	void generate_connected_random_graph2();			// generates a connected random graph
 
 	void export_graph();								// exports the graph
 
