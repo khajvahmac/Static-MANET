@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11970,        315]
-NotebookOptionsPosition[     11219,        292]
-NotebookOutlinePosition[     11593,        308]
-CellTagsIndexPosition[     11550,        305]
+NotebookDataLength[     11385,        299]
+NotebookOptionsPosition[     10845,        280]
+NotebookOutlinePosition[     11219,        296]
+CellTagsIndexPosition[     11176,        293]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -125,11 +125,6 @@ Cell[BoxData[{
    3.701591557498557*^9, 3.7015917521842394`*^9, {3.7015917942992644`*^9, 
    3.701591794441162*^9}},ExpressionUUID->"c0015076-8a49-4591-9019-\
 77a3c0a2cab7"],
-
-Cell[BoxData["RegularPolygon"], "Input",
- CellChangeTimes->{{3.7015911668446198`*^9, 
-  3.701591181280916*^9}},ExpressionUUID->"0ffd6692-56d2-4dc9-af35-\
-a3d9b980fd0f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -243,13 +238,11 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"gTiles", " ", "=", " ", 
    RowBox[{"Graphics", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
-       RowBox[{"FaceForm", "[", "White", "]"}], ",", "tiles", ",", " ", 
-       "zoneNumbers"}], "}"}], ",", 
-     RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]}], ";"}]}], "Input",
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
+      RowBox[{"FaceForm", "[", "White", "]"}], ",", "tiles", ",", " ", 
+      "zoneNumbers"}], "}"}], "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.7013538571484857`*^9, 3.7013539020880146`*^9}, {
    3.701354052488531*^9, 3.7013540529221883`*^9}, {3.701354159112851*^9, 
    3.7013542070423098`*^9}, {3.7013542537624474`*^9, 3.701354290049079*^9}, {
@@ -273,8 +266,8 @@ Cell[BoxData[{
    3.70149157362117*^9, 3.7014915825910645`*^9}, 3.701591147725194*^9, {
    3.7015912412747183`*^9, 3.7015912983737154`*^9}, {3.7015913700339603`*^9, 
    3.7015914136150503`*^9}, {3.701591466249323*^9, 3.701591502889909*^9}, {
-   3.701591861125458*^9, 
-   3.7015918656891284`*^9}},ExpressionUUID->"71712f0c-964b-4b4f-a18b-\
+   3.701591861125458*^9, 3.7015918656891284`*^9}, 
+   3.7016095982613754`*^9},ExpressionUUID->"71712f0c-964b-4b4f-a18b-\
 0aaa227b6578"],
 
 Cell[BoxData[
@@ -283,12 +276,7 @@ Cell[BoxData[
    RowBox[{"gTiles", ",", "gGraph"}], "}"}], "]"}]], "Input",
  CellChangeTimes->{{3.7014916162315197`*^9, 
   3.701491658096312*^9}},ExpressionUUID->"934f26dc-ec69-4ec3-b167-\
-2dcb32222722"],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.7015930757342415`*^9, 
-  3.7015930757512655`*^9}},ExpressionUUID->"75f6631d-043f-4c46-8e8e-\
-092eb9417dcd"]
+2dcb32222722"]
 },
 WindowSize->{1366, 685},
 WindowMargins->{{-8, Automatic}, {Automatic, -8}},
@@ -309,14 +297,10 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 4310, 106, 209, "Input", "ExpressionUUID" -> \
 "c0015076-8a49-4591-9019-77a3c0a2cab7"],
-Cell[4871, 128, 168, 3, 28, "Input", "ExpressionUUID" -> \
-"0ffd6692-56d2-4dc9-af35-a3d9b980fd0f"],
-Cell[5042, 133, 5769, 144, 425, "Input", "ExpressionUUID" -> \
+Cell[4871, 128, 5725, 142, 425, "Input", "ExpressionUUID" -> \
 "71712f0c-964b-4b4f-a18b-0aaa227b6578"],
-Cell[10814, 279, 242, 6, 28, "Input", "ExpressionUUID" -> \
-"934f26dc-ec69-4ec3-b167-2dcb32222722"],
-Cell[11059, 287, 156, 3, 28, InheritFromParent, "ExpressionUUID" -> \
-"75f6631d-043f-4c46-8e8e-092eb9417dcd"]
+Cell[10599, 272, 242, 6, 28, "Input", "ExpressionUUID" -> \
+"934f26dc-ec69-4ec3-b167-2dcb32222722"]
 }
 ]
 *)

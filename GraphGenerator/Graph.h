@@ -30,6 +30,7 @@ public:
 	void generate_random_graph();						// generates a random graph
 	void generate_connected_random_graph();				// generates a connected random graph
 	void generate_connected_random_graph2();			// generates a connected random graph
+	void generate_connected_random_graph3(int density);	// generates a connected random graph
 
 	void export_graph();								// exports the graph
 

@@ -134,43 +134,6 @@ void Graph::DFS(int from, bool* const visited)
 	}
 }
 
-void Graph::generate_connected_random_graph2()
-{
-	srand((uint)time(NULL));
-
-	for (int i = 0; i < N; ++i)
-	{
-		if (nodes[i]) {
-			nodes[i]->~Node();
-			nodes[i] = nullptr;
-		}
-	}
-
-	int posX = rand() % gWidth;
-	int posY = rand() % gHeight;
-
-	set<pair<int, int> > curPoints;
-
-	curPoints.insert({ posX, posY });
-	nodes[0] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
-
-	while (curPoints.size() != N)
-	{
-		posX = rand() % gWidth;
-		posY = rand() % gHeight;
-
-		for (auto x : curPoints) {
-			if (curPoints.find({ posX, posY }) == curPoints.end() && dist({ posX, posY }, x) <= DEFAULT_TRANSMISSION_RANGE) {
-				curPoints.insert({ posX, posY });
-				nodes[curPoints.size() - 1] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
-				break;
-			}
-		}
-	}
-
-	rebuild_adjacency_list();
-}
-
 void Graph::generate_random_graph()
 {
 	srand((uint)time(NULL));
@@ -210,6 +173,85 @@ void Graph::generate_connected_random_graph()
 		if (++generations % 1000 == 0)
 			printf("generations: %d\r", generations);
 	}
+}
+
+void Graph::generate_connected_random_graph2()
+{
+	srand((uint)time(NULL));
+
+	for (int i = 0; i < N; ++i)
+	{
+		if (nodes[i]) {
+			nodes[i]->~Node();
+			nodes[i] = nullptr;
+		}
+	}
+
+	int posX = rand() % gWidth;
+	int posY = rand() % gHeight;
+
+	set<pair<int, int> > curPoints;
+
+	curPoints.insert({ posX, posY });
+	nodes[0] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
+
+	while (curPoints.size() != N)
+	{
+		posX = rand() % gWidth;
+		posY = rand() % gHeight;
+
+		for (auto x : curPoints) {
+			if (curPoints.find({ posX, posY }) == curPoints.end() && dist({ posX, posY }, x) <= DEFAULT_TRANSMISSION_RANGE) {
+				curPoints.insert({ posX, posY });
+				nodes[curPoints.size() - 1] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
+				break;
+			}
+		}
+	}
+
+	rebuild_adjacency_list();
+}
+
+void Graph::generate_connected_random_graph3(int density)
+{
+	srand((uint)time(NULL));
+
+	for (int i = 0; i < N; ++i)
+	{
+		if (nodes[i]) {
+			nodes[i]->~Node();
+			nodes[i] = nullptr;
+		}
+	}
+
+	int posX = rand() % gWidth;
+	int posY = rand() % gHeight;
+
+	set<pair<int, int> > curPoints;
+
+	curPoints.insert({ posX, posY });
+	nodes[0] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
+
+	while (curPoints.size() != N)
+	{
+		posX = rand() % gWidth;
+		posY = rand() % gHeight;
+
+		if (curPoints.find({ posX, posY }) != curPoints.end())
+			continue;
+
+		int curDensity = 0;
+		for (auto x : curPoints) {
+			if (dist({ posX, posY }, x) <= DEFAULT_TRANSMISSION_RANGE)
+				curDensity++;
+		}
+		if (curDensity > 0 && curDensity <= density) {
+			curPoints.insert({ posX, posY });
+			nodes[curPoints.size() - 1] = new Node(posX, posY, DEFAULT_TRANSMISSION_RANGE);
+		}
+	}
+
+	rebuild_adjacency_list();
 }
 
 void Graph::rebuild_adjacency_list()
