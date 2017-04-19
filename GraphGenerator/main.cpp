@@ -2,7 +2,7 @@
 
 int main()
 {
-	Graph g(8,100,100);
+	Graph g(200,100,100);
 
 	g.generate_connected_random_graph2();
 	g.info();
