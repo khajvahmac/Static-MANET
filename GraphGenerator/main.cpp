@@ -2,9 +2,9 @@
 
 int main()
 {
-	Graph g(200,100,100);
+	Graph g(100,100,100);
 
-	g.generate_connected_random_graph3(4);
+	g.generate_connected_random_graph3(3);
 	g.info();
 	g.export_graph();
 
