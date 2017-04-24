@@ -52,11 +52,21 @@ public class HexagonAreaManager {
     /**
      * Get the neighbouring hexagon ids from coordinate
      * */
-    public List<Integer> getNeighbourIds(Coordinate coordinate) {
-        return new ArrayList<Integer>() {{
+    public List<Integer> getNeighbourIds(Coordinate coordinate)
+    {
+        int currentHexagonId = getHexagonId(coordinate);
 
-        }};
-    }
+        List<Integer> neighbours = new ArrayList<Integer>();
+              
+        neighbours.add(currentHexagonId - 36);
+        neighbours.add(currentHexagonId + 36);
+        neighbours.add(currentHexagonId - 37);
+        neighbours.add(currentHexagonId + 37);
+        neighbours.add(currentHexagonId - 73);
+        neighbours.add(currentHexagonId + 73);
+
+        return neighbours; 
+   }
 
     /**
      * Returns the closest hexagon to destination from the list of source hexagons.
