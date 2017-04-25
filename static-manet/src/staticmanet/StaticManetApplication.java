@@ -2,10 +2,7 @@ package staticmanet;
 
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +18,7 @@ public class StaticManetApplication implements Application{
     private static Logger logger = Logger.getLogger("StaticManet");
     private Coordinate coordinate;
     private List<Integer> neighbourList;
-    private Map<Integer, Boolean> neighbours;
+    private Map<Integer, Boolean> neighbours = new HashMap<>();
     private Set<Integer> processedPackets = new HashSet<>();
     private ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
     private Boolean isEmpty;

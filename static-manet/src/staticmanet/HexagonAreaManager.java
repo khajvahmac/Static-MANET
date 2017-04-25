@@ -2,6 +2,8 @@ package staticmanet;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -28,7 +30,7 @@ public class HexagonAreaManager {
 		
 		Collections.sort(arr, new Comparator<Coordinate>() {
 			public int compare(Coordinate o1, Coordinate o2) {
-				if(o1.y < o2.y || (o1.y == o2.y && o1.x < o2.x))
+				if(o1.getY() < o2.getY() || (o1.getY() == o2.getY() && o1.getX() < o2.getX()))
                 return -1;
 		        return 1;
 		    }
