@@ -12,20 +12,22 @@ public class HexagonAreaManager {
     {
         this.tRadius = 10;
         this.R = tRadius / Math.abs(13);
+        this.X = 100;
+        this.Y = 100;
 
         for(double i = -X; i <= 2 * X; i += 3 * R) {
 			for(double j = -Y; j <= 2 * Y; j += R * Math.sqrt(3)) {
-				arr.add(new Point(i, j));
+				arr.add(new Coordinate(i, j));
 			}
 		}
 		for(double i = -X + R * 3 / 2; i <= 2 * X; i += 3 * R) {
 			for(double j = -Y + R * Math.sqrt(3) / 2; j <= 2 * Y; j += R * Math.sqrt(3)) {
-				arr.add(new Point(i, j));
+				arr.add(new Coordinate(i, j));
 			}
 		}
 		
-		Collections.sort(arr, new Comparator<Point>() {
-			public int compare(Point o1, Point o2) {
+		Collections.sort(arr, new Comparator<Coordinate>() {
+			public int compare(Coordinate o1, Coordinate o2) {
 				if(o1.y < o2.y || (o1.y == o2.y && o1.x < o2.x))
                 return -1;
 		        return 1;
