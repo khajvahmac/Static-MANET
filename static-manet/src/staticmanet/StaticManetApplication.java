@@ -47,8 +47,10 @@ public class StaticManetApplication implements Application{
                 this.neighbours.put(packet.getInterSource(), false);
                 break;
             case INITIALIZE:
-                logger.info("Initialization from + " + packet.getInterSource());
-                this.initializeData(packet);
+                if (this.neighbourList.contains(packet.getSource())) {
+                    logger.info("Initialization from + " + packet.getInterSource());
+                    this.initializeData(packet);
+                }
             case NEW_NEIGHBOURS:
                 break;
         }
@@ -112,6 +114,10 @@ public class StaticManetApplication implements Application{
         }
     }
 
+    public int getCurrentHexagon() {
+        return this.currHexagon;
+    }
+
     public void afterNodeMoved(Coordinate newCoordinates) {
         if (this.currHexagon != this.areaManager.getHexagonId(newCoordinates)) {
             this.neighbourList = this.areaManager.getNeighbourIds(this.coordinate);
@@ -151,7 +157,7 @@ public class StaticManetApplication implements Application{
         this.neighbours.put(packet.getInterSource(), true);
     }
 
-    private void dataToTransmit(Packet packet) {
+    public void dataToTransmit(Packet packet) {
         List<Integer> nonEmptyNeighbours = this.neighbourList.stream()
                 .filter(x -> this.neighbours.get(x) && x != packet.getInterSource())
                 .collect(Collectors.toList());

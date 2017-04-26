@@ -1,6 +1,5 @@
 package staticmanet;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,6 +9,7 @@ import java.util.List;
  * Created by khajvah on 4/8/17.
  */
 public class HexagonAreaManager {
+
     public HexagonAreaManager()
     {
         this.tRadius = 10;
@@ -45,10 +45,11 @@ public class HexagonAreaManager {
         double dist = 100000000;
         int bestHexagonID = -1;
 
-        for(int i = 0; i < arr.size(); i++)
-        if(coordinate.distanceTo(arr.get(i)) <= dist) {
-            dist = coordinate.distanceTo(arr.get(i));
-            bestHexagonID = i;
+        for(int i = 0; i < arr.size(); i++) {
+            if (coordinate.distanceTo(arr.get(i)) <= dist) {
+                dist = coordinate.distanceTo(arr.get(i));
+                bestHexagonID = i;
+            }
         }
         return bestHexagonID;
     }
@@ -60,7 +61,7 @@ public class HexagonAreaManager {
     {
         int currentHexagonId = getHexagonId(coordinate);
 
-        List<Integer> neighbours = new ArrayList<Integer>();
+        List<Integer> neighbours = new ArrayList<>();
               
         neighbours.add(currentHexagonId - 36);
         neighbours.add(currentHexagonId + 36);
@@ -81,9 +82,9 @@ public class HexagonAreaManager {
 
     private int X;
     private int Y;
-    private static double R;
-    private static double tRadius;
+    private double R;
+    private double tRadius;
 
-    public static List<Coordinate> arr = new ArrayList<Coordinate>();
+    private List<Coordinate> arr = new ArrayList<>();
 
 }

@@ -19,6 +19,10 @@ public class Network {
         this.nodes.add(node);
     }
 
+    public List<Node> getNodes() {
+        return nodes;
+    }
+
     /**
      * Transmit data to the nodes in range.
      * */

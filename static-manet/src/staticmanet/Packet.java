@@ -17,6 +17,7 @@ public class Packet {
         this.data = data;
         this.messageType = messageType;
         this.id = globalId++;
+        this.messageType = type;
     }
 
     public int getId() {

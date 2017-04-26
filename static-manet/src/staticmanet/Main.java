@@ -5,9 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Logger;
@@ -39,6 +37,23 @@ public class Main {
                 Node node = new Node(i, coordinate, application, network, es);
                 network.addNode(node);
             }
+
+            for (Node node : network.getNodes()) {
+                node.getApplication().initialize();
+            }
+
+
+            Node sourceNode = network.getNodes().get(1);
+            Node targetNode = network.getNodes().get(network.getNodes().size() - 1);
+            Map<String, String> data = new HashMap<String, String>() {{
+                this.put("Stuff", "SomeStuff");
+            }};
+            Packet packet = new Packet(((StaticManetApplication)sourceNode.getApplication()).getCurrentHexagon(),
+                    ((StaticManetApplication)targetNode.getApplication()).getCurrentHexagon(),
+                    ((StaticManetApplication)targetNode.getApplication()).getCurrentHexagon(),
+                    data, MessageType.DATA_TO_TRANSMIT);
+
+            ((StaticManetApplication)sourceNode.getApplication()).dataToTransmit(packet);
 
         } catch (IOException e) {
             logger.severe("Cannot read graph text. " + e);

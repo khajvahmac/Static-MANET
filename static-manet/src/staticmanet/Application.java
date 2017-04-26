@@ -8,4 +8,5 @@ public interface Application {
     void beforeNodeMoved(Coordinate newCoordinates);
     void afterNodeMoved(Coordinate newCoordinates);
     void setNetworkInterface(NetworkInterface networkInterface);
+    void initialize();
 }
