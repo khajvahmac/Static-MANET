@@ -10,5 +10,6 @@ public enum MessageType {
     HEX_NOT_EMPTY,
     HEX_EMPTY,
     HEX_BECAME_ACTIVE,
-    NEW_NEIGHBOURS
+    NEW_NEIGHBOURS,
+    INITIALIZE
 }
