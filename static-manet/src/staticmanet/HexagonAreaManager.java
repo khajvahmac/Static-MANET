@@ -11,7 +11,7 @@ public class HexagonAreaManager {
     public HexagonAreaManager()
     {
         this.tRadius = 10;
-        this.R = tRadius / Math.abs(13);
+        this.R = tRadius / Math.sqrt(13);
         this.X = 100;
         this.Y = 100;
 
