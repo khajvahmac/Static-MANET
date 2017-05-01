@@ -291,10 +291,10 @@ void Graph::calculate_density()
 	density = 100.*E / (N*(N - 1) / 2);
 }
 
-void Graph::export_graph()
+void Graph::export_graph(string fileName)
 {
 	std::ofstream file;
-	file.open("graph.dat");
+	file.open(fileName);
 
 	file << N << " " << E << " " << DEFAULT_TRANSMISSION_RANGE << "\n";
 

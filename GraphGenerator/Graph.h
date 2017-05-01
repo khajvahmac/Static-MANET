@@ -4,9 +4,11 @@
 #include "Node.h"
 
 #include <vector>
+#include <string>
 
 using std::vector;
 using std::pair;
+using std::string;
 
 class Graph
 {
@@ -32,7 +34,7 @@ public:
 	void generate_connected_random_graph2();			// generates a connected random graph
 	void generate_connected_random_graph3(int density);	// generates a connected random graph
 
-	void export_graph();								// exports the graph
+	void export_graph(string fileName = "graph.dat");	// exports the graph
 
 	void set_hex_zone();								// calculates number of zones in 1 row and 1 column
 	int get_hex_zone(double x, double y);				// gets zone number by coordinates
