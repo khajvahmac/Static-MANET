@@ -39,6 +39,10 @@ public class Node {
         return coordinate;
     }
 
+    public Application getApplication() {
+        return this.application;
+    }
+
     public NetworkInterface getNetworkInterface() {
         return networkInterface;
     }

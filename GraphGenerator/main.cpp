@@ -1,38 +1,38 @@
-#include "Graph.h";
+#include "Graph.h"
 
 int main()
 {
-	Graph g(100,100,100);
+	Graph g(180, 100, 100);
 
-	g.generate_connected_random_graph3(3);
+	g.generate_connected_random_graph3(1);
 	g.info();
 	g.export_graph("data1.dat");
 
-	Graph f(100, 100, 100);
-	f.generate_connected_random_graph3(3);
+	/*Graph f(180, 100, 100);
+	f.generate_connected_random_graph2();
 	f.info();
-	f.export_graph("data2.dat");
+	f.export_graph("data2.dat");*/
 
-	Graph h(100, 100, 100);
-	h.generate_connected_random_graph3(4);
+	/*Graph h(180, 100, 100);
+	h.generate_connected_random_graph();
 	h.info();
-	h.export_graph("data3.dat");
+	h.export_graph("data3.dat");*/
 
-	Graph z(100, 100, 100);
+	/*Graph z(100, 100, 100);
 	z.generate_connected_random_graph3(4);
 	z.info();
-	z.export_graph("data4.dat");
+	z.export_graph("data4.dat");*/
 
-	Graph r(100, 100, 100);
+	/*Graph r(100, 100, 100);
 	r.generate_connected_random_graph3(5);
 	r.info();
-	r.export_graph("data5.dat");
+	r.export_graph("data5.dat"); */
 
-	Graph y(100, 100, 100);
+	/*Graph y(100, 100, 100);
 	y.generate_connected_random_graph3(5);
 	y.info();
-	y.export_graph("data6.dat");
+	y.export_graph("data6.dat");*/
 
-	
+
 	return 0;
 }

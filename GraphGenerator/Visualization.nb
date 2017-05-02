@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     14522,        368]
-NotebookOptionsPosition[     13540,        338]
-NotebookOutlinePosition[     13885,        353]
-CellTagsIndexPosition[     13842,        350]
+NotebookDataLength[    131579,       3025]
+NotebookOptionsPosition[    130254,       2989]
+NotebookOutlinePosition[    130597,       3004]
+CellTagsIndexPosition[    130554,       3001]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[{
      RowBox[{"FileNameJoin", "[", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<graph.dat\>\""}], 
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<data1.dat\>\""}], 
        "}"}], "]"}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -84,13 +84,24 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{"i", ",", "coords"}], "}"}]}], "]"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gNodes", " ", "=", " ", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PointSize", "[", "Large", "]"}], ",", " ", "Red", ",", 
+      RowBox[{"Point", "[", "coords", "]"}]}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{"gGraph", "=", 
   RowBox[{"Graphics", "[", 
    RowBox[{"{", 
     RowBox[{"lines", ",", 
      RowBox[{"PointSize", "[", "Large", "]"}], ",", " ", "Red", ",", 
-     RowBox[{"Point", "[", "coords", "]"}], ",", " ", "Black", ",", 
-     "vertexNumbers"}], "}"}], "]"}]}]}], "Input",
+     RowBox[{"Point", "[", "coords", "]"}]}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Blue", " ", "vertexNumbers"}], "*)"}]}]}], "Input",
  CellChangeTimes->{{3.700071086122851*^9, 3.700071130822236*^9}, {
    3.7000718846545715`*^9, 3.7000719545351048`*^9}, {3.7000729371795464`*^9, 
    3.7000729429324465`*^9}, {3.700073038331643*^9, 3.7000730441157236`*^9}, 
@@ -117,24 +128,13 @@ Cell[BoxData[{
    3.70254739058471*^9}, {3.7025474549043884`*^9, 3.7025476349485855`*^9}, {
    3.7025476793944693`*^9, 3.7025477133554897`*^9}, {3.7025477534545417`*^9, 
    3.702547765150784*^9}, {3.702547818977127*^9, 3.7025478735698977`*^9}, 
-   3.7025479617843204`*^9, 
-   3.702548543141422*^9},ExpressionUUID->"c0015076-8a49-4591-9019-\
+   3.7025479617843204`*^9, 3.702548543141422*^9, {3.702635033555428*^9, 
+   3.7026350527300267`*^9}, {3.702639164598631*^9, 3.702639194779457*^9}, {
+   3.702639564828684*^9, 3.702639565032254*^9}, {3.702639863722041*^9, 
+   3.702639864177745*^9}, {3.7026403614373264`*^9, 3.702640366763545*^9}, {
+   3.702749524461575*^9, 
+   3.7027495392552633`*^9}},ExpressionUUID->"c0015076-8a49-4591-9019-\
 77a3c0a2cab7"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Export", "[", 
-  RowBox[{"\"\<graph.png\>\"", ",", "gGraph"}], "]"}]], "Input",
- CellChangeTimes->{{3.702548459880149*^9, 
-  3.7025484860239773`*^9}},ExpressionUUID->"7c1c3823-b672-4565-a192-\
-b18c1f9b5d1d"],
-
-Cell[BoxData["\<\"graph.png\"\>"], "Output",
- CellChangeTimes->{{3.702548478788988*^9, 
-  3.7025484873555517`*^9}},ExpressionUUID->"6af527b8-def9-4bfb-88ff-\
-a2130325414c"]
-}, Open  ]],
 
 Cell[BoxData[{
  RowBox[{
@@ -317,27 +317,2678 @@ Cell[BoxData[
   3.7025479915082474`*^9}},ExpressionUUID->"934f26dc-ec69-4ec3-b167-\
 2dcb32222722"],
 
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7027515143215723`*^9, 
+  3.7027515143371964`*^9}},ExpressionUUID->"535aa090-4325-4ad9-807d-\
+182a06ee7a96"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7027515592759957`*^9, 
+  3.7027515595384874`*^9}},ExpressionUUID->"df9d1596-cebf-4499-b1cb-\
+a228e146c320"],
+
+Cell[BoxData[
+ RowBox[{"tiles", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{"-", "6"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{"-", "6"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{"-", "6"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{"-", "6"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{"-", "6"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"5", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"5", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"5", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"5", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"5", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"15", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"15", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"15", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"15", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"10", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"10", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"10", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"10", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"10", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"25", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"25", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"25", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"25", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"15", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"15", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"15", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"15", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"15", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"35", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"35", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"35", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"35", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"20", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"20", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"20", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"20", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"20", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"45", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"45", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"45", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"45", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"25", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"25", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"25", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"25", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"25", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"55", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"55", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"55", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"55", " ", 
+           SqrtBox[
+            FractionBox["3", "13"]]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"30", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"30", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"30", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"30", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"30", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox["39"]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox["39"]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["75", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox["39"]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["105", 
+          RowBox[{"2", " ", 
+           SqrtBox["13"]}]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox[
+          RowBox[{"5", " ", 
+           SqrtBox["39"]}], "2"]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"35", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["15", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"35", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["30", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"35", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["45", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"35", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}], ",", 
+    RowBox[{"RegularPolygon", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         FractionBox["60", 
+          SqrtBox["13"]]}], ",", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", 
+         RowBox[{"35", " ", 
+          SqrtBox[
+           FractionBox["3", "13"]]}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["5", 
+         SqrtBox["13"]], ",", "0"}], "}"}], ",", "6"}], "]"}]}], "}"}]}]], \
+"Input",
+ CellChangeTimes->{{3.702751486123643*^9, 
+  3.702751487822912*^9}},ExpressionUUID->"acd14639-fa4c-4d12-86c8-\
+1049eacbd47b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
+    RowBox[{"FaceForm", "[", "White", "]"}], ",", "tiles", ",", " ", "Black", 
+    ",", 
+    RowBox[{"tiles", "[", 
+     RowBox[{"[", "39", "]"}], "]"}], ",", "Green", ",", 
+    RowBox[{"tiles", "[", 
+     RowBox[{"[", 
+      RowBox[{"{", 
+       RowBox[{"30", ",", "34", ",", "35", ",", "43", ",", "44", ",", "48"}], 
+       "}"}], "]"}], "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.7027510532335157`*^9, {3.7027510891207895`*^9, 3.702751120545404*^9}, {
+   3.702751161830866*^9, 3.7027512020822487`*^9}, {3.7027512410266447`*^9, 
+   3.702751327518687*^9}, {3.7027513606400375`*^9, 
+   3.702751426169485*^9}},ExpressionUUID->"b7736737-35ab-442e-bb77-\
+1712d1a1527e"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {EdgeForm[GrayLevel[0]], FaceForm[GrayLevel[1]], {
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-4.613249509436927, -6}, {-5.306624754718463, \
+-4.799038846461847}, {-6.693375245281537, -4.799038846461847}, \
+{-7.386750490563073, -6}, {-6.693375245281537, -7.200961153538153}, \
+{-5.306624754718463, -7.200961153538153}}]],
+      RegularPolygon[{-6, -6}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-0.4529980377477081, -6}, {-1.146373283029245, \
+-4.799038846461847}, {-2.533123773592318, -4.799038846461847}, \
+{-3.226499018873854, -6}, {-2.533123773592318, -7.200961153538153}, \
+{-1.146373283029245, -7.200961153538153}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+         3.70725343394151, -6}, {3.013878188659973, -4.799038846461847}, {
+         1.627127698096901, -4.799038846461847}, {0.933752452815364, -6}, {
+         1.627127698096901, -7.200961153538153}, {
+         3.013878188659973, -7.200961153538153}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+         7.867504905630728, -6}, {7.174129660349193, -4.799038846461847}, {
+         5.787379169786119, -4.799038846461847}, {5.094003924504584, -6}, {
+         5.787379169786119, -7.200961153538153}, {
+         7.174129660349193, -7.200961153538153}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+         12.027756377319946`, -6}, {11.33438113203841, -4.799038846461847}, {
+         9.947630641475339, -4.799038846461847}, {9.254255396193802, -6}, {
+         9.947630641475339, -7.200961153538153}, {
+         11.33438113203841, -7.200961153538153}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6}, {-6 + 
+          10 13^Rational[-1, 
+              2], -6}}, {{-2.533123773592318, -4.799038846461847}, \
+{-3.226499018873854, -3.598077692923693}, {-4.613249509436927, \
+-3.598077692923693}, {-5.306624754718463, -4.799038846461847}, \
+{-4.613249509436927, -6}, {-3.226499018873854, -6}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6}, {-6 + 25 13^Rational[-1, 2], -6}}, {{
+         1.627127698096901, -4.799038846461847}, {
+         0.933752452815364, -3.598077692923693}, {-0.4529980377477081, \
+-3.598077692923693}, {-1.146373283029245, -4.799038846461847}, \
+{-0.4529980377477081, -6}, {0.933752452815364, -6}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6}, {-6 + 40 13^Rational[-1, 2], -6}}, {{
+         5.787379169786119, -4.799038846461847}, {
+         5.094003924504584, -3.598077692923693}, {
+         3.70725343394151, -3.598077692923693}, {
+         3.013878188659973, -4.799038846461847}, {3.70725343394151, -6}, {
+         5.094003924504584, -6}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6}, {-6 + 55 13^Rational[-1, 2], -6}}, {{
+         9.947630641475339, -4.799038846461847}, {
+         9.254255396193802, -3.598077692923693}, {
+         7.867504905630728, -3.598077692923693}, {
+         7.174129660349193, -4.799038846461847}, {7.867504905630728, -6}, {
+         9.254255396193802, -6}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-4.613249509436927, -3.598077692923693}, \
+{-5.306624754718463, -2.3971165393855394`}, {-6.693375245281537, \
+-2.3971165393855394`}, {-7.386750490563073, -3.598077692923693}, \
+{-6.693375245281537, -4.799038846461847}, {-5.306624754718463, \
+-4.799038846461847}}]],
+      RegularPolygon[{-6, -6 + 5 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-0.4529980377477081, -3.598077692923693}, \
+{-1.146373283029245, -2.3971165393855394`}, {-2.533123773592318, \
+-2.3971165393855394`}, {-3.226499018873854, -3.598077692923693}, \
+{-2.533123773592318, -4.799038846461847}, {-1.146373283029245, \
+-4.799038846461847}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        5 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, -3.598077692923693}, {
+        3.013878188659973, -2.3971165393855394`}, {
+        1.627127698096901, -2.3971165393855394`}, {
+        0.933752452815364, -3.598077692923693}, {
+        1.627127698096901, -4.799038846461847}, {
+        3.013878188659973, -4.799038846461847}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        5 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, -3.598077692923693}, {
+        7.174129660349193, -2.3971165393855394`}, {
+        5.787379169786119, -2.3971165393855394`}, {
+        5.094003924504584, -3.598077692923693}, {
+        5.787379169786119, -4.799038846461847}, {
+        7.174129660349193, -4.799038846461847}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        5 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, -3.598077692923693}, {
+        11.33438113203841, -2.3971165393855394`}, {
+        9.947630641475339, -2.3971165393855394`}, {
+        9.254255396193802, -3.598077692923693}, {
+        9.947630641475339, -4.799038846461847}, {
+        11.33438113203841, -4.799038846461847}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        5 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 
+          5 Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-2.533123773592318, -2.3971165393855394`}, \
+{-3.226499018873854, -1.1961553858473861`}, {-4.613249509436927, \
+-1.1961553858473861`}, {-5.306624754718463, -2.3971165393855394`}, \
+{-4.613249509436927, -3.598077692923693}, {-3.226499018873854, \
+-3.598077692923693}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, -2.3971165393855394`}, {
+        0.933752452815364, -1.1961553858473861`}, {-0.4529980377477081, \
+-1.1961553858473861`}, {-1.146373283029245, -2.3971165393855394`}, \
+{-0.4529980377477081, -3.598077692923693}, {
+        0.933752452815364, -3.598077692923693}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, -2.3971165393855394`}, {
+        5.094003924504584, -1.1961553858473861`}, {
+        3.70725343394151, -1.1961553858473861`}, {
+        3.013878188659973, -2.3971165393855394`}, {
+        3.70725343394151, -3.598077692923693}, {
+        5.094003924504584, -3.598077692923693}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 5 Rational[3, 13]^Rational[1, 2]}}, {{
+        9.947630641475339, -2.3971165393855394`}, {
+        9.254255396193802, -1.1961553858473861`}, {
+        7.867504905630728, -1.1961553858473861`}, {
+        7.174129660349193, -2.3971165393855394`}, {
+        7.867504905630728, -3.598077692923693}, {
+        9.254255396193802, -3.598077692923693}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-4.613249509436927, -1.1961553858473861`}, \
+{-5.306624754718463, 0.004805767690768015}, {-6.693375245281537, 
+        0.004805767690768015}, {-7.386750490563073, -1.1961553858473861`}, \
+{-6.693375245281537, -2.3971165393855394`}, {-5.306624754718463, \
+-2.3971165393855394`}}]],
+      RegularPolygon[{-6, -6 + 10 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] 
+           Rational[3, 13]^
+            Rational[
+             1, 2]}}, {{-0.4529980377477081, -1.1961553858473861`}, \
+{-1.146373283029245, 0.004805767690768015}, {-2.533123773592318, 
+        0.004805767690768015}, {-3.226499018873854, -1.1961553858473861`}, \
+{-2.533123773592318, -2.3971165393855394`}, {-1.146373283029245, \
+-2.3971165393855394`}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        10 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, -1.1961553858473861`}, {3.013878188659973, 
+        0.004805767690768015}, {1.627127698096901, 0.004805767690768015}, {
+        0.933752452815364, -1.1961553858473861`}, {
+        1.627127698096901, -2.3971165393855394`}, {
+        3.013878188659973, -2.3971165393855394`}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        10 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, -1.1961553858473861`}, {7.174129660349193, 
+        0.004805767690768015}, {5.787379169786119, 0.004805767690768015}, {
+        5.094003924504584, -1.1961553858473861`}, {
+        5.787379169786119, -2.3971165393855394`}, {
+        7.174129660349193, -2.3971165393855394`}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        10 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[15, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, -1.1961553858473861`}, {11.33438113203841, 
+        0.004805767690768015}, {9.947630641475339, 0.004805767690768015}, {
+        9.254255396193802, -1.1961553858473861`}, {
+        9.947630641475339, -2.3971165393855394`}, {
+        11.33438113203841, -2.3971165393855394`}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        10 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 
+          10 Rational[3, 13]^Rational[1, 2]}}, {{-2.533123773592318, 
+        0.004805767690768015}, {-3.226499018873854, 
+        1.2057669212289213`}, {-4.613249509436927, 
+        1.2057669212289213`}, {-5.306624754718463, 
+        0.004805767690768015}, {-4.613249509436927, -1.1961553858473861`}, \
+{-3.226499018873854, -1.1961553858473861`}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 0.004805767690768015}, {0.933752452815364, 
+        1.2057669212289213`}, {-0.4529980377477081, 
+        1.2057669212289213`}, {-1.146373283029245, 
+        0.004805767690768015}, {-0.4529980377477081, -1.1961553858473861`}, {
+        0.933752452815364, -1.1961553858473861`}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 0.004805767690768015}, {5.094003924504584, 
+        1.2057669212289213`}, {3.70725343394151, 1.2057669212289213`}, {
+        3.013878188659973, 0.004805767690768015}, {
+        3.70725343394151, -1.1961553858473861`}, {
+        5.094003924504584, -1.1961553858473861`}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 10 Rational[3, 13]^Rational[1, 2]}}, {{
+        9.947630641475339, 0.004805767690768015}, {9.254255396193802, 
+        1.2057669212289213`}, {7.867504905630728, 1.2057669212289213`}, {
+        7.174129660349193, 0.004805767690768015}, {
+        7.867504905630728, -1.1961553858473861`}, {
+        9.254255396193802, -1.1961553858473861`}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-4.613249509436927, 
+        1.2057669212289213`}, {-5.306624754718463, 
+        2.4067280747670754`}, {-6.693375245281537, 
+        2.4067280747670754`}, {-7.386750490563073, 
+        1.2057669212289213`}, {-6.693375245281537, 
+        0.004805767690768015}, {-5.306624754718463, 0.004805767690768015}}]],
+      RegularPolygon[{-6, -6 + 15 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-0.4529980377477081, 
+        1.2057669212289213`}, {-1.146373283029245, 
+        2.4067280747670754`}, {-2.533123773592318, 
+        2.4067280747670754`}, {-3.226499018873854, 
+        1.2057669212289213`}, {-2.533123773592318, 
+        0.004805767690768015}, {-1.146373283029245, 0.004805767690768015}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        15 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 1.2057669212289213`}, {3.013878188659973, 
+        2.4067280747670754`}, {1.627127698096901, 2.4067280747670754`}, {
+        0.933752452815364, 1.2057669212289213`}, {1.627127698096901, 
+        0.004805767690768015}, {3.013878188659973, 0.004805767690768015}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        15 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, 1.2057669212289213`}, {7.174129660349193, 
+        2.4067280747670754`}, {5.787379169786119, 2.4067280747670754`}, {
+        5.094003924504584, 1.2057669212289213`}, {5.787379169786119, 
+        0.004805767690768015}, {7.174129660349193, 0.004805767690768015}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        15 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, 1.2057669212289213`}, {11.33438113203841, 
+        2.4067280747670754`}, {9.947630641475339, 2.4067280747670754`}, {
+        9.254255396193802, 1.2057669212289213`}, {9.947630641475339, 
+        0.004805767690768015}, {11.33438113203841, 0.004805767690768015}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        15 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}}, {{-2.533123773592318, 
+        2.4067280747670754`}, {-3.226499018873854, 
+        3.6076892283052278`}, {-4.613249509436927, 
+        3.6076892283052278`}, {-5.306624754718463, 
+        2.4067280747670754`}, {-4.613249509436927, 
+        1.2057669212289213`}, {-3.226499018873854, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 2.4067280747670754`}, {0.933752452815364, 
+        3.6076892283052278`}, {-0.4529980377477081, 
+        3.6076892283052278`}, {-1.146373283029245, 
+        2.4067280747670754`}, {-0.4529980377477081, 1.2057669212289213`}, {
+        0.933752452815364, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 2.4067280747670754`}, {5.094003924504584, 
+        3.6076892283052278`}, {3.70725343394151, 3.6076892283052278`}, {
+        3.013878188659973, 2.4067280747670754`}, {3.70725343394151, 
+        1.2057669212289213`}, {5.094003924504584, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}}, {{
+        9.947630641475339, 2.4067280747670754`}, {9.254255396193802, 
+        3.6076892283052278`}, {7.867504905630728, 3.6076892283052278`}, {
+        7.174129660349193, 2.4067280747670754`}, {7.867504905630728, 
+        1.2057669212289213`}, {9.254255396193802, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-4.613249509436927, 
+        3.6076892283052278`}, {-5.306624754718463, 
+        4.808650381843382}, {-6.693375245281537, 
+        4.808650381843382}, {-7.386750490563073, 
+        3.6076892283052278`}, {-6.693375245281537, 
+        2.4067280747670754`}, {-5.306624754718463, 2.4067280747670754`}}]],
+      RegularPolygon[{-6, -6 + 20 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-0.4529980377477081, 
+        3.6076892283052278`}, {-1.146373283029245, 
+        4.808650381843382}, {-2.533123773592318, 
+        4.808650381843382}, {-3.226499018873854, 
+        3.6076892283052278`}, {-2.533123773592318, 
+        2.4067280747670754`}, {-1.146373283029245, 2.4067280747670754`}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        20 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 3.6076892283052278`}, {3.013878188659973, 
+        4.808650381843382}, {1.627127698096901, 4.808650381843382}, {
+        0.933752452815364, 3.6076892283052278`}, {1.627127698096901, 
+        2.4067280747670754`}, {3.013878188659973, 2.4067280747670754`}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        20 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, 3.6076892283052278`}, {7.174129660349193, 
+        4.808650381843382}, {5.787379169786119, 4.808650381843382}, {
+        5.094003924504584, 3.6076892283052278`}, {5.787379169786119, 
+        2.4067280747670754`}, {7.174129660349193, 2.4067280747670754`}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        20 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, 3.6076892283052278`}, {11.33438113203841, 
+        4.808650381843382}, {9.947630641475339, 4.808650381843382}, {
+        9.254255396193802, 3.6076892283052278`}, {9.947630641475339, 
+        2.4067280747670754`}, {11.33438113203841, 2.4067280747670754`}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        20 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}}, {{-2.533123773592318, 
+        4.808650381843382}, {-3.226499018873854, 
+        6.009611535381536}, {-4.613249509436927, 
+        6.009611535381536}, {-5.306624754718463, 
+        4.808650381843382}, {-4.613249509436927, 
+        3.6076892283052278`}, {-3.226499018873854, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 4.808650381843382}, {0.933752452815364, 
+        6.009611535381536}, {-0.4529980377477081, 
+        6.009611535381536}, {-1.146373283029245, 
+        4.808650381843382}, {-0.4529980377477081, 3.6076892283052278`}, {
+        0.933752452815364, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 4.808650381843382}, {5.094003924504584, 
+        6.009611535381536}, {3.70725343394151, 6.009611535381536}, {
+        3.013878188659973, 4.808650381843382}, {3.70725343394151, 
+        3.6076892283052278`}, {5.094003924504584, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}}, {{
+        9.947630641475339, 4.808650381843382}, {9.254255396193802, 
+        6.009611535381536}, {7.867504905630728, 6.009611535381536}, {
+        7.174129660349193, 4.808650381843382}, {7.867504905630728, 
+        3.6076892283052278`}, {9.254255396193802, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-4.613249509436927, 
+        6.009611535381536}, {-5.306624754718463, 
+        7.210572688919688}, {-6.693375245281537, 
+        7.210572688919688}, {-7.386750490563073, 
+        6.009611535381536}, {-6.693375245281537, 
+        4.808650381843382}, {-5.306624754718463, 4.808650381843382}}]],
+      RegularPolygon[{-6, -6 + 25 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-0.4529980377477081, 
+        6.009611535381536}, {-1.146373283029245, 
+        7.210572688919688}, {-2.533123773592318, 
+        7.210572688919688}, {-3.226499018873854, 
+        6.009611535381536}, {-2.533123773592318, 
+        4.808650381843382}, {-1.146373283029245, 4.808650381843382}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        25 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 6.009611535381536}, {3.013878188659973, 
+        7.210572688919688}, {1.627127698096901, 7.210572688919688}, {
+        0.933752452815364, 6.009611535381536}, {1.627127698096901, 
+        4.808650381843382}, {3.013878188659973, 4.808650381843382}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        25 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, 6.009611535381536}, {7.174129660349193, 
+        7.210572688919688}, {5.787379169786119, 7.210572688919688}, {
+        5.094003924504584, 6.009611535381536}, {5.787379169786119, 
+        4.808650381843382}, {7.174129660349193, 4.808650381843382}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        25 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, 6.009611535381536}, {11.33438113203841, 
+        7.210572688919688}, {9.947630641475339, 7.210572688919688}, {
+        9.254255396193802, 6.009611535381536}, {9.947630641475339, 
+        4.808650381843382}, {11.33438113203841, 4.808650381843382}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        25 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          5 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}}, {{-2.533123773592318, 
+        7.210572688919688}, {-3.226499018873854, 
+        8.411533842457843}, {-4.613249509436927, 
+        8.411533842457843}, {-5.306624754718463, 
+        7.210572688919688}, {-4.613249509436927, 
+        6.009611535381536}, {-3.226499018873854, 6.009611535381536}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 7.210572688919688}, {0.933752452815364, 
+        8.411533842457843}, {-0.4529980377477081, 
+        8.411533842457843}, {-1.146373283029245, 
+        7.210572688919688}, {-0.4529980377477081, 6.009611535381536}, {
+        0.933752452815364, 6.009611535381536}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 7.210572688919688}, {5.094003924504584, 
+        8.411533842457843}, {3.70725343394151, 8.411533842457843}, {
+        3.013878188659973, 7.210572688919688}, {3.70725343394151, 
+        6.009611535381536}, {5.094003924504584, 6.009611535381536}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          50 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}}, {{
+        9.947630641475339, 7.210572688919688}, {9.254255396193802, 
+        8.411533842457843}, {7.867504905630728, 8.411533842457843}, {
+        7.174129660349193, 7.210572688919688}, {7.867504905630728, 
+        6.009611535381536}, {9.254255396193802, 6.009611535381536}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 - 5 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-4.613249509436927, 
+        8.411533842457843}, {-5.306624754718463, 
+        9.612494995995995}, {-6.693375245281537, 
+        9.612494995995995}, {-7.386750490563073, 
+        8.411533842457843}, {-6.693375245281537, 
+        7.210572688919688}, {-5.306624754718463, 7.210572688919688}}]],
+      RegularPolygon[{-6, -6 + 30 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 10 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] 
+           Rational[3, 13]^Rational[1, 2]}}, {{-0.4529980377477081, 
+        8.411533842457843}, {-1.146373283029245, 
+        9.612494995995995}, {-2.533123773592318, 
+        9.612494995995995}, {-3.226499018873854, 
+        8.411533842457843}, {-2.533123773592318, 
+        7.210572688919688}, {-1.146373283029245, 7.210572688919688}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        30 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 25 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 8.411533842457843}, {3.013878188659973, 
+        9.612494995995995}, {1.627127698096901, 9.612494995995995}, {
+        0.933752452815364, 8.411533842457843}, {1.627127698096901, 
+        7.210572688919688}, {3.013878188659973, 7.210572688919688}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        30 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 40 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        7.867504905630728, 8.411533842457843}, {7.174129660349193, 
+        9.612494995995995}, {5.787379169786119, 9.612494995995995}, {
+        5.094003924504584, 8.411533842457843}, {5.787379169786119, 
+        7.210572688919688}, {7.174129660349193, 7.210572688919688}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        30 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 55 13^Rational[-1, 2], -6 + 
+          30 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        12.027756377319946`, 8.411533842457843}, {11.33438113203841, 
+        9.612494995995995}, {9.947630641475339, 9.612494995995995}, {
+        9.254255396193802, 8.411533842457843}, {9.947630641475339, 
+        7.210572688919688}, {11.33438113203841, 7.210572688919688}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        30 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 10 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 5 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 5 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 10 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{-2.533123773592318, 
+        9.612494995995995}, {-3.226499018873854, 
+        10.813456149534147`}, {-4.613249509436927, 
+        10.813456149534147`}, {-5.306624754718463, 
+        9.612494995995995}, {-4.613249509436927, 
+        8.411533842457843}, {-3.226499018873854, 8.411533842457843}}]],
+      RegularPolygon[{-6 + Rational[15, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] 39^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 25 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 20 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 20 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 25 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{1.627127698096901, 
+        9.612494995995995}, {0.933752452815364, 
+        10.813456149534147`}, {-0.4529980377477081, 
+        10.813456149534147`}, {-1.146373283029245, 
+        9.612494995995995}, {-0.4529980377477081, 8.411533842457843}, {
+        0.933752452815364, 8.411533842457843}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] 39^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 40 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 35 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 35 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 40 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{5.787379169786119, 
+        9.612494995995995}, {5.094003924504584, 10.813456149534147`}, {
+        3.70725343394151, 10.813456149534147`}, {3.013878188659973, 
+        9.612494995995995}, {3.70725343394151, 8.411533842457843}, {
+        5.094003924504584, 8.411533842457843}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] 39^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 55 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 50 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 50 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 55 13^Rational[-1, 2], -6 + 
+          Rational[-5, 2] Rational[3, 13]^Rational[1, 2] + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{9.947630641475339, 
+        9.612494995995995}, {9.254255396193802, 10.813456149534147`}, {
+        7.867504905630728, 10.813456149534147`}, {7.174129660349193, 
+        9.612494995995995}, {7.867504905630728, 8.411533842457843}, {
+        9.254255396193802, 8.411533842457843}}]],
+      RegularPolygon[{-6 + Rational[105, 2] 13^Rational[-1, 2], -6 + 
+        Rational[5, 2] 39^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[-1, 2], -6 + 
+          35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 - 5 
+          13^Rational[-1, 2], -6 + 35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[-5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{-4.613249509436927, 
+        10.81345614953415}, {-5.306624754718463, 
+        12.014417303072303`}, {-6.693375245281537, 
+        12.014417303072303`}, {-7.386750490563073, 
+        10.81345614953415}, {-6.693375245281537, 
+        9.612494995995995}, {-5.306624754718463, 9.612494995995995}}]],
+      RegularPolygon[{-6, -6 + 35 Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 20 13^Rational[-1, 2], -6 + 
+          35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          10 13^Rational[-1, 2], -6 + 35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[25, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{-0.4529980377477081, 
+        10.81345614953415}, {-1.146373283029245, 
+        12.014417303072303`}, {-2.533123773592318, 
+        12.014417303072303`}, {-3.226499018873854, 
+        10.81345614953415}, {-2.533123773592318, 
+        9.612494995995995}, {-1.146373283029245, 9.612494995995995}}]],
+      RegularPolygon[{-6 + 15 13^Rational[-1, 2], -6 + 
+        35 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{3.70725343394151, 
+        10.81345614953415}, {3.013878188659973, 12.014417303072303`}, {
+        1.627127698096901, 12.014417303072303`}, {0.933752452815364, 
+        10.81345614953415}, {1.627127698096901, 9.612494995995995}, {
+        3.013878188659973, 9.612494995995995}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        35 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 50 13^Rational[-1, 2], -6 + 
+          35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[95, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{7.867504905630728, 
+        10.81345614953415}, {7.174129660349193, 12.014417303072303`}, {
+        5.787379169786119, 12.014417303072303`}, {5.094003924504584, 
+        10.81345614953415}, {5.787379169786119, 9.612494995995995}, {
+        7.174129660349193, 9.612494995995995}}]],
+      RegularPolygon[{-6 + 45 13^Rational[-1, 2], -6 + 
+        35 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 5 13^Rational[1, 2], -6 + 
+          35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[75, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          55 13^Rational[-1, 2], -6 + 35 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[115, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}, {-6 + 
+          Rational[125, 2] 13^Rational[-1, 2], -6 + 
+          Rational[5, 2] 39^Rational[1, 2]}}, {{12.027756377319946`, 
+        10.81345614953415}, {11.33438113203841, 12.014417303072303`}, {
+        9.947630641475339, 12.014417303072303`}, {9.254255396193802, 
+        10.81345614953415}, {9.947630641475339, 9.612494995995995}, {
+        11.33438113203841, 9.612494995995995}}]],
+      RegularPolygon[{-6 + 60 13^Rational[-1, 2], -6 + 
+        35 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]]}, 
+    {GrayLevel[0], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 3.6076892283052278`}, {3.013878188659973, 
+        4.808650381843382}, {1.627127698096901, 4.808650381843382}, {
+        0.933752452815364, 3.6076892283052278`}, {1.627127698096901, 
+        2.4067280747670754`}, {3.013878188659973, 2.4067280747670754`}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        20 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]]}, 
+    {RGBColor[0, 1, 0], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[25, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 1.2057669212289213`}, {3.013878188659973, 
+        2.4067280747670754`}, {1.627127698096901, 2.4067280747670754`}, {
+        0.933752452815364, 1.2057669212289213`}, {1.627127698096901, 
+        0.004805767690768015}, {3.013878188659973, 0.004805767690768015}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        15 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 2.4067280747670754`}, {0.933752452815364, 
+        3.6076892283052278`}, {-0.4529980377477081, 
+        3.6076892283052278`}, {-1.146373283029245, 
+        2.4067280747670754`}, {-0.4529980377477081, 1.2057669212289213`}, {
+        0.933752452815364, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 15 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 2.4067280747670754`}, {5.094003924504584, 
+        3.6076892283052278`}, {3.70725343394151, 3.6076892283052278`}, {
+        3.013878188659973, 2.4067280747670754`}, {3.70725343394151, 
+        1.2057669212289213`}, {5.094003924504584, 1.2057669212289213`}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[35, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[35, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          20 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}}, {{
+        1.627127698096901, 4.808650381843382}, {0.933752452815364, 
+        6.009611535381536}, {-0.4529980377477081, 
+        6.009611535381536}, {-1.146373283029245, 
+        4.808650381843382}, {-0.4529980377477081, 3.6076892283052278`}, {
+        0.933752452815364, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[45, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + Rational[85, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          35 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          40 13^Rational[-1, 2], -6 + 20 Rational[3, 13]^Rational[1, 2]}}, {{
+        5.787379169786119, 4.808650381843382}, {5.094003924504584, 
+        6.009611535381536}, {3.70725343394151, 6.009611535381536}, {
+        3.013878188659973, 4.808650381843382}, {3.70725343394151, 
+        3.6076892283052278`}, {5.094003924504584, 3.6076892283052278`}}]],
+      RegularPolygon[{-6 + Rational[75, 2] 13^Rational[-1, 2], -6 + 
+        Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {
+       5 13^Rational[-1, 2], 0}, 6]], 
+     InterpretationBox[
+      PolygonBox[
+       NCache[{{-6 + 35 13^Rational[-1, 2], -6 + 
+          25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[55, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          25 13^Rational[-1, 2], -6 + 25 Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[55, 2] 13^Rational[-1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}, {-6 + 
+          Rational[5, 2] 13^Rational[1, 2], -6 + 
+          Rational[45, 2] Rational[3, 13]^Rational[1, 2]}}, {{
+        3.70725343394151, 6.009611535381536}, {3.013878188659973, 
+        7.210572688919688}, {1.627127698096901, 7.210572688919688}, {
+        0.933752452815364, 6.009611535381536}, {1.627127698096901, 
+        4.808650381843382}, {3.013878188659973, 4.808650381843382}}]],
+      RegularPolygon[{-6 + 30 13^Rational[-1, 2], -6 + 
+        25 Rational[3, 13]^Rational[1, 2]}, {5 13^Rational[-1, 2], 0}, 
+       6]]}}}]], "Output",
+ CellChangeTimes->{{3.702751171175601*^9, 3.7027511743744535`*^9}, {
+  3.702751254239571*^9, 
+  3.7027514264542823`*^9}},ExpressionUUID->"1f34fdb4-591e-4331-852e-\
+91dde35a3c2d"]
+}, Open  ]],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Export", "[", 
-  RowBox[{"\"\<res.png\>\"", ",", 
-   RowBox[{"Image", "[", 
-    RowBox[{"res", ",", 
-     RowBox[{"ImageSize", "\[Rule]", "Full"}]}], "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.7025480737667427`*^9, 3.7025480833487997`*^9}, {
-  3.7025482413145494`*^9, 3.7025482416768656`*^9}, {3.7025484243050966`*^9, 
-  3.7025484387996855`*^9}},ExpressionUUID->"a6597084-516e-48ae-95a6-\
-50c9e2199b32"],
+  RowBox[{"\"\<rr2.png\>\"", ",", "res"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7027514311840467`*^9, 
+  3.7027514398480854`*^9}},ExpressionUUID->"987608e2-a0d3-49ba-b074-\
+40ba9c190bd0"],
 
-Cell[BoxData["\<\"res.png\"\>"], "Output",
+Cell[BoxData["\<\"rr2.png\"\>"], "Output",
  CellChangeTimes->{
-  3.702548341114913*^9},ExpressionUUID->"55f5ce2e-db9d-4610-91c7-\
-d83ca71ea630"]
+  3.702751465081483*^9},ExpressionUUID->"0f3974af-4ae2-4034-b634-\
+775c9c08fe42"]
 }, Open  ]]
 },
-WindowSize->{1904, 997},
-WindowMargins->{{1358, Automatic}, {Automatic, 0}},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
 StyleDefinitions->"Default.nb"
 ]
@@ -352,23 +3003,29 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4422, 101, 240, "Input", "ExpressionUUID" -> \
+Cell[558, 20, 5061, 116, 278, "Input", "ExpressionUUID" -> \
 "c0015076-8a49-4591-9019-77a3c0a2cab7"],
-Cell[CellGroupData[{
-Cell[5005, 125, 231, 5, 30, "Input", "ExpressionUUID" -> \
-"7c1c3823-b672-4565-a192-b18c1f9b5d1d"],
-Cell[5239, 132, 172, 3, 30, "Output", "ExpressionUUID" -> \
-"6af527b8-def9-4bfb-88ff-a2130325414c"]
-}, Open  ]],
-Cell[5426, 138, 6910, 166, 449, "Input", "ExpressionUUID" -> \
+Cell[5622, 138, 6910, 166, 449, "Input", "ExpressionUUID" -> \
 "71712f0c-964b-4b4f-a18b-0aaa227b6578"],
-Cell[12339, 306, 581, 11, 30, "Input", "ExpressionUUID" -> \
+Cell[12535, 306, 581, 11, 30, "Input", "ExpressionUUID" -> \
 "934f26dc-ec69-4ec3-b167-2dcb32222722"],
+Cell[13119, 319, 156, 3, 30, InheritFromParent, "ExpressionUUID" -> \
+"535aa090-4325-4ad9-807d-182a06ee7a96"],
+Cell[13278, 324, 236, 5, 88, "Input", "ExpressionUUID" -> \
+"df9d1596-cebf-4499-b1cb-a228e146c320"],
+Cell[13517, 331, 33700, 1171, 1602, InheritFromParent, "ExpressionUUID" -> \
+"acd14639-fa4c-4d12-86c8-1049eacbd47b"],
 Cell[CellGroupData[{
-Cell[12945, 321, 432, 9, 30, "Input", "ExpressionUUID" -> \
-"a6597084-516e-48ae-95a6-50c9e2199b32"],
-Cell[13380, 332, 144, 3, 30, "Output", "ExpressionUUID" -> \
-"55f5ce2e-db9d-4610-91c7-d83ca71ea630"]
+Cell[47242, 1506, 800, 19, 30, "Input", "ExpressionUUID" -> \
+"b7736737-35ab-442e-bb77-1712d1a1527e"],
+Cell[48045, 1527, 81781, 1444, 371, "Output", "ExpressionUUID" -> \
+"1f34fdb4-591e-4331-852e-91dde35a3c2d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[129863, 2976, 228, 5, 30, "Input", "ExpressionUUID" -> \
+"987608e2-a0d3-49ba-b074-40ba9c190bd0"],
+Cell[130094, 2983, 144, 3, 30, "Output", "ExpressionUUID" -> \
+"0f3974af-4ae2-4034-b634-775c9c08fe42"]
 }, Open  ]]
 }
 ]
